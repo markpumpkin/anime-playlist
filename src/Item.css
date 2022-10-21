@@ -1,8 +1,26 @@
 .item {
-  cursor: pointer;
-  padding: 10px 15px;
-} 
+    cursor: pointer;
+    padding: 8px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 .item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-} 
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.link-youtube {
+    width: 16px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.link-youtube svg {
+    fill: #c00;
+    margin-top: 2px;
+}
+
+.item .label {
+    font-size: 14px;
+}
