@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "//markpumpkin.github.io/anime-playlist/static/css/main.86d62cbc.css",
-    "main.js": "//markpumpkin.github.io/anime-playlist/static/js/main.c6a5bc4b.js",
+    "main.js": "//markpumpkin.github.io/anime-playlist/static/js/main.b6858a3a.js",
     "static/js/787.190ed3e1.chunk.js": "//markpumpkin.github.io/anime-playlist/static/js/787.190ed3e1.chunk.js",
     "index.html": "//markpumpkin.github.io/anime-playlist/index.html",
     "main.86d62cbc.css.map": "//markpumpkin.github.io/anime-playlist/static/css/main.86d62cbc.css.map",
-    "main.c6a5bc4b.js.map": "//markpumpkin.github.io/anime-playlist/static/js/main.c6a5bc4b.js.map",
+    "main.b6858a3a.js.map": "//markpumpkin.github.io/anime-playlist/static/js/main.b6858a3a.js.map",
     "787.190ed3e1.chunk.js.map": "//markpumpkin.github.io/anime-playlist/static/js/787.190ed3e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86d62cbc.css",
-    "static/js/main.c6a5bc4b.js"
+    "static/js/main.b6858a3a.js"
   ]
 }
