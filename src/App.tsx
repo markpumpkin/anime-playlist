@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { data } from "./data";
 import Item from "./Item";
+
 export type ItemData = {
     value?: string;
     label?: string;
@@ -27,6 +28,11 @@ function App() {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>
+                )}
+                {currentItem.source === "link" && (
+                    <video controls className="local-video">
+                        <source src={currentItem.value} type="video/mp4"></source>
+                    </video>
                 )}
             </div>
             <div className="list">
