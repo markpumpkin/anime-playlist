@@ -804,4 +804,39 @@ export const data = [
         value: "S35QY2z7bQc",
         label: "Đấu La Đại Lục | Tập 234",
     },
+    {
+        source: "youtube",
+        value: "XezaTae8zHg",
+        label: "Đấu La Đại Lục | Tập 235",
+    },
+    {
+        source: "youtube",
+        value: "NLDKZG9Qtp8",
+        label: "Đấu La Đại Lục | Tập 236",
+    },
+    {
+        source: "youtube",
+        value: "bJw1szkPd1I",
+        label: "Đấu La Đại Lục | Tập 237",
+    },
+    {
+        source: "youtube",
+        value: "vY6r73VGBAs",
+        label: "Đấu La Đại Lục | Tập 238",
+    },
+    {
+        source: "youtube",
+        value: "XP8u2fiT7Qw",
+        label: "Đấu La Đại Lục | Tập 239",
+    },
+    {
+        source: "youtube",
+        value: "A8BLdl2ptD0",
+        label: "Đấu La Đại Lục | Tập 240-P1",
+    },
+    {
+        source: "youtube",
+        value: "sSjP5uGWrBY",
+        label: "Đấu La Đại Lục | Tập 240-P2",
+    },
 ];
