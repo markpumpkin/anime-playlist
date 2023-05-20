@@ -366,37 +366,37 @@ export const data = [
     },
     {
         source: "youtube",
-        value: "a0PP13MqNks",
+        value: "bwypA5MabGA",
         label: "Đấu La Đại Lục | Tập 74",
     },
     {
         source: "youtube",
-        value: "evfevjWq9NQ",
+        value: "1GlOchkZWTE",
         label: "Đấu La Đại Lục | Tập 75",
     },
     {
         source: "youtube",
-        value: "deyfT7OvSvI",
+        value: "yozIGJH4hS4",
         label: "Đấu La Đại Lục | Tập 76",
     },
     {
         source: "youtube",
-        value: "fFOqZ4MTZno",
+        value: "TiLtXq5usEY",
         label: "Đấu La Đại Lục | Tập 77",
     },
     {
         source: "youtube",
-        value: "SMP0QBwVlO8",
+        value: "K8vS4KipBLg",
         label: "Đấu La Đại Lục | Tập 78",
     },
     {
         source: "youtube",
-        value: "jrJRfk08Su4",
+        value: "s2lWvBf_o8M",
         label: "Đấu La Đại Lục | Tập 79",
     },
     {
         source: "youtube",
-        value: "c7xVD61YhnM",
+        value: "ka51bCrILKY",
         label: "Đấu La Đại Lục | Tập 80",
     },
     {
