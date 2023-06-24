@@ -1,5 +1,5 @@
-import _ from "lodash";
 import { useState } from "react";
+import _ from "lodash";
 import "./App.css";
 import { data } from "./data";
 import Item from "./Item";
@@ -31,7 +31,10 @@ function App() {
                 )}
                 {currentItem.source === "link" && (
                     <video controls className="local-video">
-                        <source src={currentItem.value} type="video/mp4"></source>
+                        <source
+                            src={currentItem.value}
+                            type="video/mp4"
+                        ></source>
                     </video>
                 )}
             </div>
