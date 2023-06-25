@@ -32,22 +32,26 @@ function App() {
     };
 
     const data = useMemo(() => {
+        let currentData: ItemData[] = [];
         switch (tabActived) {
+            case "dldl_p1": {
+                currentData = dldl_p1;
+                break;
+            }
+
             case "dldl_p2": {
-                setCurrentItem(dldl_p2[0]);
-                return dldl_p2;
+                currentData = dldl_p2;
+                break;
             }
 
             case "dptk_p5": {
-                setCurrentItem(dptk_p5[0]);
-                return dptk_p5;
-            }
-
-            default: {
-                setCurrentItem(dldl_p1[0]);
-                return dldl_p1;
+                currentData = dptk_p5;
+                break;
             }
         }
+
+        setCurrentItem(currentData[0]);
+        return currentData;
     }, [tabActived]);
 
     const thumbnails = images as any;
