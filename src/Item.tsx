@@ -1,6 +1,5 @@
 import _ from "lodash";
 import "./Item.css";
-import default_thumbnail from "./default_thumbnail.png";
 import type { ItemData } from "./App";
 
 export type ItemProps = ItemData & {
@@ -29,12 +28,8 @@ function Item(props: ItemProps) {
                     {timestamp && (
                         <span className="timestamp">{timestamp}</span>
                     )}
-                    {thumbnail || default_thumbnail ? (
-                        <img
-                            src={thumbnail || default_thumbnail}
-                            alt={label}
-                            width="100%"
-                        />
+                    {thumbnail ? (
+                        <img src={thumbnail} alt={label} width="100%" />
                     ) : (
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

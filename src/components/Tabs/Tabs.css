@@ -1,0 +1,63 @@
+.tab-container {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.tab-container ._content {
+    padding: 15px;
+}
+
+.tab-container .title {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.tab-container .tabHead {
+    display: flex;
+    justify-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #68686822;
+    overflow-y: auto;
+}
+
+.tab-container .tabHeadItem {
+    cursor: pointer;
+    padding: 8px 16px; 
+    display: flex;
+    justify-items: center;
+}
+
+.tab-container .tabHeadItem svg {
+    margin-top: -2px;
+}
+
+.tab-container .tabHeadItem.actived {
+    border-bottom: 2px solid #2340a7;
+}
+
+.tab-container ._content code {
+    padding: 2px 5px;
+    background-color: beige;
+    display: inline-block;
+}
+
+.tab-container ._content .download {
+    text-decoration: none;
+    display: flex;
+    max-width: fit-content;
+    justify-items: center;
+    color: #444;
+    padding: 10px 8px;
+    border-radius: 3px;
+    border: 1px solid #68686822;
+}
+
+.tab-container ._content .download svg {
+    margin-top: -2px;
+}
+
+.tab-container ._content .download:hover {
+    color: #2a6bc0;
+}
