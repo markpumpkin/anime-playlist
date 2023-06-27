@@ -24,6 +24,7 @@ function Item(props: ItemProps) {
                     className="link-youtube _watchinyoutube"
                     href={`https://www.youtube.com/watch?v=${value}`}
                     rel="noreferrer"
+                    onClick={() => _.isFunction(onClick) && onClick(props)}
                 >
                     {timestamp && (
                         <span className="timestamp">{timestamp}</span>
