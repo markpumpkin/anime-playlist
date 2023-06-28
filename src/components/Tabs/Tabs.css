@@ -20,6 +20,20 @@
     margin-bottom: 5px;
     border-bottom: 1px solid #68686822;
     overflow-y: auto;
+    padding-left: 15px;
+    position: relative;
+}
+
+.tab-container .tabHead .clean-cache-local {
+    position: absolute;
+    left: -2px;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .tab-container .tabHeadItem {

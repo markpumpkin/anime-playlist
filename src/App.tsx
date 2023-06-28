@@ -2,9 +2,6 @@ import _ from "lodash";
 import { useState, useMemo, useEffect } from "react";
 import "./App.css";
 import * as database from "./data/index";
-import { data as dldl_p1 } from "./data/dldl_p1";
-import { data as dldl_p2 } from "./data/dldl_p2";
-import { data as dptk_p5 } from "./data/dptk_p5";
 import * as images from "./images";
 import Tabs from "./components/Tabs";
 import Item from "./Item";
@@ -23,22 +20,14 @@ export type ItemData = {
 };
 
 const tablist = ["dldl_p1", "dldl_p2", "dptk_p5"];
+const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
-    const [currentItem, setCurrentItem] = useState<ItemData>(dldl_p1[0]);
+    const [currentItem, setCurrentItem] = useState<ItemData>({});
     const [tabActived, setTabActived] = useState<string>(tablist[0]);
 
-    useEffect(() => {
-        const storage = localStorage.getItem("anime-playlist");
-        if (!_.isNull(storage)) {
-            const { currentItem, tabActived } = JSON.parse(storage);
-            setTabActived(tabActived);
-            setCurrentItem(currentItem);
-        }
-    }, []);
-
     const setStorageValue = (key: string, value: Object) => {
-        const storage = localStorage.getItem("anime-playlist");
+        const storage = localStorage.getItem(LOCALSTORAGE_NAME);
         let currentValue = _.cloneDeep(value);
         if (!_.isNull(storage)) {
             const currentStorage = JSON.parse(storage);
@@ -53,10 +42,25 @@ function App() {
             const currentStorage: any = {};
             currentStorage[tabActived] = { ...item };
 
-            setStorageValue("anime-playlist", currentStorage);
+            setStorageValue(LOCALSTORAGE_NAME, currentStorage);
             setCurrentItem(item);
         }
     };
+
+    useEffect(() => {
+        const storage = localStorage.getItem(LOCALSTORAGE_NAME);
+        if (!_.isNull(storage)) {
+            const { currentItem, tabActived } = JSON.parse(storage);
+            setTabActived(tabActived);
+            setCurrentItem(currentItem);
+        } else {
+            if (tabActived) {
+                const allDatabase = database as any;
+                let currentItem = allDatabase[tabActived][0];
+                currentItem && setCurrentItem(currentItem);
+            }
+        }
+    }, [tabActived]);
 
     const data = useMemo(() => {
         const allData = database as any;
@@ -80,14 +84,14 @@ function App() {
 
     const handleChangeTab = (tabName: string) => {
         const allDatabase = database as any;
-        const storage = localStorage.getItem("anime-playlist");
+        const storage = localStorage.getItem(LOCALSTORAGE_NAME);
         let currentItem = allDatabase[tabName][0];
 
         if (!_.isNull(storage)) {
             const currentStorage = JSON.parse(storage);
             if (currentStorage[tabName]) currentItem = currentStorage[tabName];
         }
-        setStorageValue("anime-playlist", {
+        setStorageValue(LOCALSTORAGE_NAME, {
             tabActived: tabName,
             currentItem,
         });
@@ -99,12 +103,22 @@ function App() {
     const thumbnails = images as any;
     const thumbnailDefault = thumbnails[`${tabActived}_thumbnail`];
 
+    const handleCleanCache = () => {
+        localStorage.removeItem(LOCALSTORAGE_NAME);
+        const currentTab = tablist[0];
+        const allDatabase = database as any;
+        let currentItem = allDatabase[currentTab][0];
+        setTabActived(currentTab);
+        currentItem && setCurrentItem(currentItem);
+    };
+
     return (
         <div className="container">
             <Tabs
                 tablist={tablist}
                 tabActived={tabActived}
                 onChange={handleChangeTab}
+                cleanCache={handleCleanCache}
             >
                 <>
                     <h2 className="current-title">{currentItem?.label}</h2>
