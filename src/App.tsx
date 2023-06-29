@@ -19,7 +19,7 @@ export type ItemData = {
     thumbnail?: string;
 };
 
-const tablist = ["dldl_p1", "dldl_p2", "dptk_p5"];
+const tablist = ["dldl_p1", "dldl_p2", "dptk_p5", "tavt"];
 const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
