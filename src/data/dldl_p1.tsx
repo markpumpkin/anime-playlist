@@ -1,4 +1,6 @@
-export const data = [
+import { ItemData } from ".";
+
+export const data: ItemData[] = [
     {
         source: "youtube",
         value: "tpmmIUAbDfE",

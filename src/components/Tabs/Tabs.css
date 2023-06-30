@@ -51,6 +51,11 @@
     border-bottom: 2px solid #2340a7;
 }
 
+.tab-container .tab-head-title {
+    text-decoration: none;
+    color: #444;
+}
+
 .tab-container ._content code {
     padding: 2px 5px;
     background-color: beige;

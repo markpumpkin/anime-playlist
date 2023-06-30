@@ -1,31 +1,22 @@
 import _ from "lodash";
 import { useState, useMemo, useEffect } from "react";
 import "./App.css";
-import * as database from "./data/index";
+import database, { ItemData, dataFullName } from "./data";
 import * as images from "./images";
 import Tabs from "./components/Tabs";
-import Item from "./Item";
-import Content from "./Content";
+import Item from "./components/Item/Item";
+import Content from "./components/Content";
 
-export type ItemData = {
-    value?: string;
-    label?: string;
-    source?: string;
-    content?: {
-        overview?: string;
-        exercise?: string;
-    };
-    timestamp?: string;
-    thumbnail?: string;
-};
+export type TabActivedName = keyof typeof dataFullName;
 
 const tablist = ["dldl_p1", "dldl_p2", "dptk_p5", "tavt"];
 const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
     const [currentItem, setCurrentItem] = useState<ItemData>({});
-    const [tabActived, setTabActived] = useState<string>(tablist[0]);
+    const [tabActived, setTabActived] = useState<TabActivedName>(tablist[0] as TabActivedName);
 
+    /** Set Local Storage */
     const setStorageValue = (key: string, value: Object) => {
         const storage = localStorage.getItem(LOCALSTORAGE_NAME);
         let currentValue = _.cloneDeep(value);
@@ -37,9 +28,10 @@ function App() {
         localStorage.setItem(key, JSON.stringify(currentValue));
     };
 
+    /** Change Item Preview */
     const handleChangePreview = (item: ItemData) => {
         if (item) {
-            const currentStorage: any = {};
+            const currentStorage: any = { tabActived };
             currentStorage[tabActived] = { ...item };
 
             setStorageValue(LOCALSTORAGE_NAME, currentStorage);
@@ -47,26 +39,27 @@ function App() {
         }
     };
 
+    /** Objective when change tabActived */
     useEffect(() => {
         const storage = localStorage.getItem(LOCALSTORAGE_NAME);
         if (!_.isNull(storage)) {
-            const { currentItem, tabActived } = JSON.parse(storage);
-            setTabActived(tabActived);
-            setCurrentItem(currentItem);
+            const currentstorage = JSON.parse(storage);
+            setTabActived(currentstorage?.tabActived);
+            setCurrentItem(currentstorage[tabActived]);
         } else {
             if (tabActived) {
-                const allDatabase = database as any;
-                let currentItem = allDatabase[tabActived][0];
+                let currentItem = database[tabActived][0];
                 currentItem && setCurrentItem(currentItem);
             }
         }
     }, [tabActived]);
 
     const data = useMemo(() => {
-        const allData = database as any;
+        const allData = database;
         return allData[tabActived] as ItemData[];
     }, [tabActived]);
 
+    /** Objective when change tabActived, scroll to Item actived */
     useEffect(() => {
         if (tabActived) {
             const timer = setTimeout(() => {
@@ -82,18 +75,22 @@ function App() {
         }
     }, [tabActived]);
 
-    const handleChangeTab = (tabName: string) => {
-        const allDatabase = database as any;
+    /** Change Tab actived */
+    const handleChangeTab = (tabName: TabActivedName) => {
         const storage = localStorage.getItem(LOCALSTORAGE_NAME);
-        let currentItem = allDatabase[tabName][0];
+        let currentItem = database[tabName][0];
 
         if (!_.isNull(storage)) {
             const currentStorage = JSON.parse(storage);
             if (currentStorage[tabName]) currentItem = currentStorage[tabName];
         }
+
+        const currentStorage: any = {};
+        currentStorage[tabName] = { ...currentItem };
+
         setStorageValue(LOCALSTORAGE_NAME, {
             tabActived: tabName,
-            currentItem,
+            ...currentStorage,
         });
 
         setCurrentItem(currentItem);
@@ -103,10 +100,11 @@ function App() {
     const thumbnails = images as any;
     const thumbnailDefault = thumbnails[`${tabActived}_thumbnail`];
 
+    /** Clear Local Storage value */
     const handleCleanCache = () => {
         localStorage.removeItem(LOCALSTORAGE_NAME);
-        const currentTab = tablist[0];
-        const allDatabase = database as any;
+        const currentTab = tablist[0] as TabActivedName;
+        const allDatabase = database;
         let currentItem = allDatabase[currentTab][0];
         setTabActived(currentTab);
         currentItem && setCurrentItem(currentItem);
@@ -136,10 +134,7 @@ function App() {
                             )}
                             {currentItem.source === "link" && (
                                 <video controls className="local-video">
-                                    <source
-                                        src={currentItem.value}
-                                        type="video/mp4"
-                                    ></source>
+                                    <source src={currentItem.value} type="video/mp4"></source>
                                 </video>
                             )}
                         </div>
@@ -147,12 +142,8 @@ function App() {
                             <ul>
                                 {_.map(data, (item: ItemData) => (
                                     <Item
-                                        isSelected={
-                                            currentItem?.value === item.value
-                                        }
-                                        thumbnail={
-                                            item?.thumbnail || thumbnailDefault
-                                        }
+                                        isSelected={currentItem?.value === item.value}
+                                        thumbnail={item?.thumbnail || thumbnailDefault}
                                         {...item}
                                         onClick={handleChangePreview}
                                     />

@@ -1,48 +1,20 @@
-# Getting Started with Create React App
+## Deploy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-## `Before deploy`
-
-install gh-pages
-
-### `npm i -D gh-pages`
-
-## `Update package.json file`
-
-add before "name":
-
-    "homepage": "http://http://markpumpkin.github.io/react-todo-list"
-
-add after "scripts - start":
-
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    yarn run build
 
 ## Commit to github
 
     git add .
     git commit -m "Deploy to github" && git push
 
-## Deploy
+## Visit App
 
-    npm run build
-    npm run deploy
+    - go to VPS server: ssh root@138.68.86.81
+    - cd /home/Workspace/anime-playlist
+    - git pull
 
-## Visit application
+## run with serve:
 
-    - go to "Settings" of project
-    - click "Page" menu
-    - "Visit site"
+    - pm2 serve <build_folder_path> <port_for_app>  --name "short_name_app" --spa
+    - pm2 save
+    - pm2 startup
