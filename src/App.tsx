@@ -9,7 +9,7 @@ import Content from "./components/Content";
 
 export type TabActivedName = keyof typeof dataFullName;
 
-const tablist = ["dldl_p1", "dldl_p2", "dptk_p5", "tavt"];
+const tablist = ["dldl_p1", "dldl_p2", "dptk_p4", "dptk_p5", "tavt"];
 const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
@@ -114,7 +114,11 @@ function App() {
 
     return (
         <div className="container">
-            <span className="clean-cache-local" onClick={handleCleanCache}>
+            <span
+                className="clean-cache-local"
+                onClick={handleCleanCache}
+                style={{ opacity: "0.1" }}
+            >
                 <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
