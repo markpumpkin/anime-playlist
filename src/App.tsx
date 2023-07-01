@@ -47,7 +47,7 @@ function App() {
         if (!_.isNull(storage)) {
             const currentstorage = JSON.parse(storage);
             setTabActived(currentstorage?.tabActived);
-            setCurrentItem(currentstorage[tabActived]);
+            setCurrentItem(currentstorage[currentstorage?.tabActived]);
         } else {
             if (tabActived) {
                 let currentItem = database[tabActived][0];
@@ -56,9 +56,16 @@ function App() {
         }
     }, [tabActived]);
 
+    /** Get current Data */
     const data = useMemo(() => {
         const allData = database;
         return allData[tabActived] as ItemData[];
+    }, [tabActived]);
+
+    /** Get thumbnail default of each data */
+    const thumbnailDefault = useMemo(() => {
+        const thumbnails = images as any;
+        return thumbnails[`${tabActived}_thumbnail`];
     }, [tabActived]);
 
     /** Objective when change tabActived, scroll to Item actived */
@@ -69,7 +76,6 @@ function App() {
                     .getElementById("anime-list-video")
                     ?.querySelector("._isSelected");
 
-                console.log(currentEl);
                 currentEl?.scrollIntoView({ behavior: "smooth" });
             }, 500);
 
@@ -87,20 +93,13 @@ function App() {
             if (currentStorage[tabName]) currentItem = currentStorage[tabName];
         }
 
-        const currentStorage: any = {};
+        const currentStorage: any = { tabActived: tabName };
         currentStorage[tabName] = { ...currentItem };
 
-        setStorageValue(LOCALSTORAGE_NAME, {
-            tabActived: tabName,
-            ...currentStorage,
-        });
-
+        setStorageValue(LOCALSTORAGE_NAME, currentStorage);
         setCurrentItem(currentItem);
         setTabActived(tabName);
     };
-
-    const thumbnails = images as any;
-    const thumbnailDefault = thumbnails[`${tabActived}_thumbnail`];
 
     /** Clear Local Storage value */
     const handleCleanCache = () => {
