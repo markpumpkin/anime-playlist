@@ -5,31 +5,43 @@ export const data: ItemData[] = [
         source: "youtube",
         value: "tpmmIUAbDfE",
         label: "Đấu La Đại Lục - Phần 1 | Tập 1",
+        thumbnail:
+            "https://i.pinimg.com/originals/d3/1d/89/d31d896ea39d68e34dc30deccd227a1b.png",
     },
     {
         source: "youtube",
         value: "YisvBSFR7nQ",
         label: "Đấu La Đại Lục - Phần 1 | Tập 2",
+        thumbnail:
+            "https://i.pinimg.com/originals/36/43/bb/3643bb8f86a938e068f85c915ad0358e.png",
     },
     {
         source: "youtube",
         value: "rG0XQ91L88o",
         label: "Đấu La Đại Lục - Phần 1 | Tập 3",
+        thumbnail:
+            "https://i.pinimg.com/originals/c9/a8/70/c9a870d519fc6e80b73d9a62251968a3.png",
     },
     {
         source: "youtube",
         value: "hAcRRQFcDQ0",
         label: "Đấu La Đại Lục - Phần 1 | Tập 4",
+        thumbnail:
+            "https://i.pinimg.com/originals/86/37/88/8637884dfbc228a28c8685f7d7b805ab.png",
     },
     {
         source: "youtube",
         value: "PM8AlBzaAo4",
         label: "Đấu La Đại Lục - Phần 1 | Tập 5",
+        thumbnail:
+            "https://i.pinimg.com/originals/65/97/f5/6597f582bc38dc2b8a15ed9d14b12dbd.png",
     },
     {
         source: "youtube",
         value: "3v8lv_shByU",
         label: "Đấu La Đại Lục - Phần 1 | Tập 6",
+        thumbnail:
+            "https://i.pinimg.com/originals/1a/fb/a3/1afba3d9b28538106c1afa4641888bca.png",
     },
     {
         source: "youtube",
