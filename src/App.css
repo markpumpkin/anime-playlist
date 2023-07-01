@@ -62,6 +62,18 @@
     padding: 0;
 }
 
+.clean-cache-local {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 /* screen max-width: 876px */
 @media screen and (max-width: 876px) {
     .container {
