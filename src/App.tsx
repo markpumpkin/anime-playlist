@@ -14,7 +14,9 @@ const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
     const [currentItem, setCurrentItem] = useState<ItemData>({});
-    const [tabActived, setTabActived] = useState<TabActivedName>(tablist[0] as TabActivedName);
+    const [tabActived, setTabActived] = useState<TabActivedName>(
+        tablist[0] as TabActivedName
+    );
 
     /** Set Local Storage */
     const setStorageValue = (key: string, value: Object) => {
@@ -110,6 +112,10 @@ function App() {
         currentItem && setCurrentItem(currentItem);
     };
 
+    useEffect(() => {
+        localStorage.removeItem(LOCALSTORAGE_NAME);
+    }, []);
+
     return (
         <div className="container">
             <Tabs
@@ -134,7 +140,10 @@ function App() {
                             )}
                             {currentItem.source === "link" && (
                                 <video controls className="local-video">
-                                    <source src={currentItem.value} type="video/mp4"></source>
+                                    <source
+                                        src={currentItem.value}
+                                        type="video/mp4"
+                                    ></source>
                                 </video>
                             )}
                         </div>
@@ -142,8 +151,12 @@ function App() {
                             <ul>
                                 {_.map(data, (item: ItemData) => (
                                     <Item
-                                        isSelected={currentItem?.value === item.value}
-                                        thumbnail={item?.thumbnail || thumbnailDefault}
+                                        isSelected={
+                                            currentItem?.value === item.value
+                                        }
+                                        thumbnail={
+                                            item?.thumbnail || thumbnailDefault
+                                        }
                                         {...item}
                                         onClick={handleChangePreview}
                                     />
