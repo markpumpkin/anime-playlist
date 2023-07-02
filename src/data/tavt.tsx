@@ -3,6 +3,61 @@ import { ItemData } from ".";
 export const data: ItemData[] = [
     {
         source: "youtube",
+        value: "YXi_W4jYnis",
+        label: "Thần Ấn Vương Toạ | Tập 1",
+        thumbnail:
+            "https://i.pinimg.com/originals/20/ee/7e/20ee7e3affcc78db429cc654301cfa3e.png",
+    },
+    {
+        source: "youtube",
+        value: "Xh0DYXAeqN4",
+        label: "Thần Ấn Vương Toạ | Tập 2",
+        thumbnail:
+            "https://i.pinimg.com/originals/5b/ff/57/5bff579fb5fd3865127b7e9b62f9fed0.png",
+    },
+    {
+        source: "youtube",
+        value: "QbM6Do5mFac",
+        label: "Thần Ấn Vương Toạ | Tập 3",
+        thumbnail:
+            "https://i.pinimg.com/originals/38/96/5b/38965b3d5c0f0ac88b6dd42bac828d40.png",
+    },
+    {
+        source: "youtube",
+        value: "Vl9B3Wr95Rs",
+        label: "Thần Ấn Vương Toạ | Tập 4",
+        thumbnail:
+            "https://i.pinimg.com/originals/b6/64/64/b66464b866ddb4016bfdbf7edc09011a.png",
+    },
+    {
+        source: "youtube",
+        value: "A_GBJEYg3Vc",
+        label: "Thần Ấn Vương Toạ | Tập 5",
+        thumbnail:
+            "https://i.pinimg.com/originals/91/c3/86/91c386e8f79dbead7c92cda454c05560.png",
+    },
+    {
+        source: "youtube",
+        value: "vj85tnSfHy8",
+        label: "Thần Ấn Vương Toạ | Tập 6",
+        thumbnail:
+            "https://i.pinimg.com/originals/9f/cf/18/9fcf1895bc5155c1b8cd3bc737e1bac9.png",
+    },
+    {
+        source: "youtube",
+        value: "DcGjl5DVUwM",
+        label: "Thần Ấn Vương Toạ | Tập 7",
+        thumbnail:
+            "https://i.pinimg.com/originals/92/8f/a8/928fa8cafce7b54fdc7699b87bc98e3f.png",
+    },
+    {
+        source: "youtube",
+        value: "iIErAps4q3c",
+        label: "Thần Ấn Vương Toạ | Tập 8",
+        thumbnail: "aaaaaa",
+    },
+    {
+        source: "youtube",
         value: "yWB147H2WTc",
         label: "Thần Ấn Vương Toạ | Tập 50",
         thumbnail:
