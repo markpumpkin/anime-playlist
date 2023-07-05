@@ -285,55 +285,64 @@ export const data: ItemData[] = [
         source: "youtube",
         value: "LncAnXHd10I",
         label: "Thần Ấn Vương Toạ | Tập 41",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/ca/95/8f/ca958fe92cf2bdc117447f56b4404329.png",
     },
     {
         source: "youtube",
         value: "ghEklCjv-Sk",
         label: "Thần Ấn Vương Toạ | Tập 42",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/fb/14/b4/fb14b4500ebe9758ab73d8dd7eefdd8c.png",
     },
     {
         source: "youtube",
-        value: "26Ku_gu6tI0",
+        value: "hoNl_tzs8ew",
         label: "Thần Ấn Vương Toạ | Tập 43",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/b8/c7/46/b8c746e7e50cd06c0fd1b808dcea49bf.png",
     },
     {
         source: "youtube",
         value: "0jvaqLYEfn0",
         label: "Thần Ấn Vương Toạ | Tập 44",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/a9/1a/04/a91a04f2925c6cb02b83eec4ef63a26c.png",
     },
     {
         source: "youtube",
         value: "-8uewYk0drM",
         label: "Thần Ấn Vương Toạ | Tập 45",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/d1/5c/82/d15c8226d41c5f54a163e29a9954d56d.png",
     },
     {
         source: "youtube",
         value: "T9qjTWaA57Q",
         label: "Thần Ấn Vương Toạ | Tập 46",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/52/53/b1/5253b1f1f9116e6a5be62848cf92767a.png",
     },
     {
         source: "youtube",
         value: "BauxpU7xjAk",
         label: "Thần Ấn Vương Toạ | Tập 47",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/13/f0/31/13f031758d7e7e4465aa138ac8a0cca7.png",
     },
     {
         source: "youtube",
         value: "-KpCJ4-quGY",
         label: "Thần Ấn Vương Toạ | Tập 48",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/91/56/b6/9156b65afe73bf45d48aac292daeef73.png",
     },
     {
         source: "youtube",
         value: "SInXHc3SR5s",
         label: "Thần Ấn Vương Toạ | Tập 49",
-        thumbnail: "aaaaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/4f/fa/de/4ffade01ae49c2391f79ebd12ee5fc2b.png",
     },
     {
         source: "youtube",
