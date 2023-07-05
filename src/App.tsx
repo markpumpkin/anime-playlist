@@ -9,7 +9,14 @@ import Content from "./components/Content";
 
 export type TabActivedName = keyof typeof dataFullName;
 
-const tablist = ["dldl_p1", "dldl_p2", "dptk_p4", "dptk_p5", "tavt"];
+const tablist = [
+    "dldl_p1",
+    "dldl_p2",
+    "dptk_ova3",
+    "dptk_p4",
+    "dptk_p5",
+    "tavt",
+];
 const LOCALSTORAGE_NAME = "anime-playlist";
 
 function App() {
