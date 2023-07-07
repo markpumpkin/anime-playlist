@@ -11,8 +11,9 @@ export type TabActivedName = keyof typeof dataFullName;
 
 const tablist = [
     "dldl_p1",
-    "dldl_p2",
     "dptk_ova3",
+    "dldl_p2",
+    "dptk_ova4",
     "dptk_p4",
     "dptk_p5",
     "tavt",
