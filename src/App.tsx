@@ -16,6 +16,7 @@ const tablist = [
     "dptk_p4",
     "dptk_p5",
     "tavt",
+    "tt_p1",
 ];
 const LOCALSTORAGE_NAME = "anime-playlist";
 

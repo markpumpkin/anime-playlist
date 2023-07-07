@@ -4,6 +4,7 @@ import { data as dptk_ova3 } from "./dptk_ova3";
 import { data as dptk_p4 } from "./dptk_p4";
 import { data as dptk_p5 } from "./dptk_p5";
 import { data as tavt } from "./tavt";
+import { data as tt_p1 } from "./tt_p1";
 
 export const dataFullName = {
     dldl_p1: "Đấu La Đại Lục - Phần 1",
@@ -12,6 +13,7 @@ export const dataFullName = {
     dptk_p4: "Đấu Phá Thương Khung - Phần 4",
     dptk_p5: "Đấu Phá Thương Khung - Phần 5",
     tavt: "Thần Ấn Vương Toạ",
+    tt_p1: "Tru Tiên - Phần 1",
 };
 
 export type ItemData = {
@@ -33,6 +35,7 @@ export type DatabaseTypes = {
     dptk_p4: ItemData[];
     dptk_p5: ItemData[];
     tavt: ItemData[];
+    tt_p1: ItemData[];
 };
 
 export default {
@@ -42,4 +45,5 @@ export default {
     dptk_p4,
     dptk_p5,
     tavt,
+    tt_p1,
 } as DatabaseTypes;
