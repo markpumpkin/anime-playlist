@@ -9,20 +9,8 @@ import Content from "./components/Content";
 
 export type TabActivedName = keyof typeof dataFullName;
 
-const tablist = [
-    "dldl_p1",
-    "dldl_p2",
-    "dptk_ova1",
-    "dptk_ova2",
-    "dptk_ova3",
-    "dptk_ova4",
-    "dptk_p4",
-    "dptk_p5",
-    "tavt",
-    "tt_p1",
-    "dct_p1",
-];
 const LOCALSTORAGE_NAME = "anime-playlist";
+const tablist = _.keysIn(database);
 
 function App() {
     const [currentItem, setCurrentItem] = useState<ItemData>({});
