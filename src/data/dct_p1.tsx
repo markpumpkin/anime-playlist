@@ -29,4 +29,11 @@ export const data: ItemData[] = [
         thumbnail:
             "https://i.pinimg.com/originals/c3/fe/85/c3fe85fd265c13f8143d6cdc6027ec04.png",
     },
+    {
+        source: "youtube",
+        value: "aBc_RiBmoA4",
+        label: "Đại Chúa Tể - Phần 1 | Tập 5",
+        thumbnail:
+            "https://i.pinimg.com/originals/8b/ba/8f/8bba8f1446ded3197dcc5e6114966260.png",
+    },
 ];

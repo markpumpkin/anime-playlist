@@ -67,7 +67,9 @@ function Item(props: ItemProps) {
                 className="label"
                 onClick={handleClick}
             >
-                <span className="text-clamp">{label}</span>
+                <span className="text-clamp">
+                    {label?.substring(label.indexOf("|") + 2)}
+                </span>
             </a>
         </li>
     );

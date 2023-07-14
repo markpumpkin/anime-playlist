@@ -19,18 +19,21 @@ export const data: ItemData[] = [
         source: "youtube",
         value: "aaa",
         label: "Thương Nguyên Đồ | Tập 3",
-        thumbnail: "aaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/37/98/be/3798bea7de68cbb2bb4a937e86f36cff.png",
     },
     {
         source: "youtube",
-        value: "aaa",
+        value: "_4iHnWqgSUY",
         label: "Thương Nguyên Đồ | Tập 4",
-        thumbnail: "aaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/44/dd/13/44dd13a022bba78e47bc8f51380b45f5.png",
     },
     {
         source: "youtube",
-        value: "aaa",
+        value: "jqSiyAqZkLk",
         label: "Thương Nguyên Đồ | Tập 5",
-        thumbnail: "aaa",
+        thumbnail:
+            "https://i.pinimg.com/originals/7f/96/90/7f96902e6dbd8bb3672f671c6ad8fe71.png",
     },
 ];

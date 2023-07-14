@@ -1,22 +1,32 @@
-import _ from "lodash";
 import { useState, useMemo, useEffect } from "react";
+import _ from "lodash";
 import "./App.css";
 import database, { ItemData, dataFullName } from "./data";
 import * as images from "./images";
-import Tabs from "./components/Tabs";
+import Dropdown from "./components/Dropdown";
 import Item from "./components/Item/Item";
-import Content from "./components/Content";
 
 export type TabActivedName = keyof typeof dataFullName;
 
 const LOCALSTORAGE_NAME = "anime-playlist";
-const tablist = _.keysIn(database);
+const tablist = _.keysIn(database) as TabActivedName[];
+
+/** Get data list option */
+const dataList = () => {
+    const options: { value: TabActivedName; label: string }[] = [];
+    _.each(tablist, (item) => {
+        options.push({
+            value: item,
+            label: dataFullName[item],
+        });
+    });
+
+    return options;
+};
 
 function App() {
     const [currentItem, setCurrentItem] = useState<ItemData>({});
-    const [tabActived, setTabActived] = useState<TabActivedName>(
-        tablist[0] as TabActivedName
-    );
+    const [tabActived, setTabActived] = useState<TabActivedName>(tablist[0]);
 
     /** Set Local Storage */
     const setStorageValue = (key: string, value: Object) => {
@@ -104,7 +114,7 @@ function App() {
     /** Clear Local Storage value */
     const handleCleanCache = () => {
         localStorage.removeItem(LOCALSTORAGE_NAME);
-        const currentTab = tablist[0] as TabActivedName;
+        const currentTab = tablist[0];
         const allDatabase = database;
         let currentItem = allDatabase[currentTab][0];
         setTabActived(currentTab);
@@ -127,54 +137,52 @@ function App() {
                     <path d="M12,19 C8.13400675,19 5,15.8659932 5,12 L6,12 C6,15.3137085 8.6862915,18 12,18 C14.2208471,18 16.1598786,16.7934041 17.1973068,15 L14,15 L14,14 L19,14 L19,19 L18,19 L18,15.6075866 C16.7751029,17.6404178 14.5463251,19 12,19 Z M10,9 L10,10 L5,10 L5,5 L6,5 L6,8.39241339 C7.22489715,6.35958217 9.45367486,5 12,5 C15.8659932,5 19,8.13400675 19,12 L18,12 C18,8.6862915 15.3137085,6 12,6 C9.77915293,6 7.84012143,7.20659589 6.80269317,9 L10,9 Z"></path>
                 </svg>
             </span>
-            <Tabs
-                tablist={tablist}
-                tabActived={tabActived}
-                onChange={handleChangeTab}
-            >
-                <>
-                    <h2 className="current-title">{currentItem?.label}</h2>
-                    <div className="play-list-wraper">
-                        <div className="preview">
-                            {currentItem.source === "youtube" && (
-                                <iframe
-                                    width="100%"
-                                    height="350px"
-                                    src={`https://www.youtube.com/embed/${currentItem.value}`}
-                                    title="YouTube video player"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            )}
-                            {currentItem.source === "link" && (
-                                <video controls className="local-video">
-                                    <source
-                                        src={currentItem.value}
-                                        type="video/mp4"
-                                    ></source>
-                                </video>
-                            )}
-                        </div>
-                        <div className="list" id="anime-list-video">
-                            <ul>
-                                {_.map(data, (item: ItemData) => (
-                                    <Item
-                                        isSelected={
-                                            currentItem?.value === item.value
-                                        }
-                                        thumbnail={
-                                            item?.thumbnail || thumbnailDefault
-                                        }
-                                        {...item}
-                                        onClick={handleChangePreview}
-                                    />
-                                ))}
-                            </ul>
-                        </div>
+            <Dropdown
+                value={tabActived}
+                options={dataList()}
+                onChange={(value) => handleChangeTab(value as TabActivedName)}
+            />
+            <>
+                <h2 className="current-title">{currentItem?.label}</h2>
+                <div className="play-list-wraper">
+                    <div className="preview">
+                        {currentItem.source === "youtube" && (
+                            <iframe
+                                width="100%"
+                                height="350px"
+                                src={`https://www.youtube.com/embed/${currentItem.value}`}
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        )}
+                        {currentItem.source === "link" && (
+                            <video controls className="local-video">
+                                <source
+                                    src={currentItem.value}
+                                    type="video/mp4"
+                                ></source>
+                            </video>
+                        )}
                     </div>
-                    <Content {...currentItem?.content} />
-                </>
-            </Tabs>
+                    <div className="list" id="anime-list-video">
+                        <ul>
+                            {_.map(data, (item: ItemData) => (
+                                <Item
+                                    isSelected={
+                                        currentItem?.value === item.value
+                                    }
+                                    thumbnail={
+                                        item?.thumbnail || thumbnailDefault
+                                    }
+                                    {...item}
+                                    onClick={handleChangePreview}
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </>
         </div>
     );
 }
