@@ -29,4 +29,11 @@ export const data: ItemData[] = [
         thumbnail:
             "https://i.pinimg.com/originals/ef/24/1b/ef241b02c326ad21add8043aa57b9ef5.png",
     },
+    {
+        source: "youtube",
+        value: "L0Z8LRON6R4",
+        label: "Đấu La Đại Lục - Phần 2 | Tập 5",
+        thumbnail:
+            "https://i.pinimg.com/originals/ee/3d/d9/ee3dd95d1ed4b97b400baf5697e772d1.png",
+    },
 ];
