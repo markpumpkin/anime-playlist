@@ -12,6 +12,7 @@
     - go to VPS server: ssh root@138.68.86.81
     - cd /home/Workspace/anime-playlist
     - git pull
+    - pm2 startup <restart>
 
 ## run with serve:
 
