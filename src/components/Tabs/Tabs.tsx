@@ -1,13 +1,13 @@
 import _ from "lodash";
-import { dataFullName } from "../../data";
-import { TabActivedName } from "../../App";
+// import { dataFullName } from "../../data";
+// import { TabActivedName } from "../../App";
 import "./Tabs.css";
 
 export type TabProps = {
     tabActived?: string;
     tablist?: string[];
     children?: React.ReactNode;
-    onChange?: (tabName: TabActivedName) => void;
+    onChange?: (tabName: any) => void;
 };
 
 function Tabs(props: TabProps) {
@@ -16,16 +16,26 @@ function Tabs(props: TabProps) {
     return (
         <div className="tab-container">
             <div className="tabHead">
-                {_.map(tablist, (tab) => (
+                <a className="btn-home" href="/">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="24"
+                        height="24"
+                    >
+                        <path d="M6.99980918,10.9770511 L6.997,18 L9.997,18 L9.997,13 L14.997,13 L14.997,18 L17.997,18 L17.997,12 L18,10.9768841 L12.5,6.16438411 L6.99980918,10.9770511 Z M19,18 C19,18.5522847 18.5522847,19 18,19 L7,19 C6.44771525,19 6,18.5522847 6,18 L6,17.6566502 C5.99800797,17.622839 5.997,17.5886132 5.997,17.554 L5.997,11.8545091 L4.8292523,12.8762883 C4.62143399,13.0581294 4.30555268,13.0370706 4.12371165,12.8292523 C3.94187063,12.621434 3.96292938,12.3055527 4.1707477,12.1237117 L12.4999931,4.83561589 L20.8292523,12.1237117 C21.0370706,12.3055527 21.0581294,12.621434 20.8762883,12.8292523 C20.6944473,13.0370706 20.378566,13.0581294 20.1707477,12.8762883 L19,11.8518841 L19,18 Z M10.997,18 L13.997,18 L13.997,14 L10.997,14 L10.997,18 Z"></path>
+                    </svg>
+                </a>
+                {_.map(tablist, (tab, index) => (
                     <span
+                        key={index}
                         className={
                             tabActived === tab
                                 ? "tabHeadItem actived"
                                 : "tabHeadItem"
                         }
                         onClick={() =>
-                            _.isFunction(onChange) &&
-                            onChange(tab as TabActivedName)
+                            _.isFunction(onChange) && onChange(tab as any)
                         }
                     >
                         <svg
@@ -39,7 +49,7 @@ function Tabs(props: TabProps) {
                         <a
                             href="/"
                             className="tab-head-title"
-                            title={dataFullName[tab as TabActivedName]}
+                            // title={dataFullName[tab as any]}
                             onClick={(e) => e.preventDefault()}
                         >
                             {tab.replace(/_/g, " ").toUpperCase()}

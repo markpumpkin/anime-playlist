@@ -1,0 +1,133 @@
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    color: #383d43;
+}
+
+.app-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    display: none;
+}
+
+.current-title {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 1.6em;
+}
+
+.play-list-wraper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    gap: 30px;
+}
+
+.preview {
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+    border: 1px solid #68686822;
+}
+
+.preview iframe {
+    margin-top: -1px;
+    margin-left: -1px;
+}
+
+.preview .local-video {
+    width: 100%;
+    height: 100%;
+}
+
+.list {
+    width: 40%;
+    height: 100%;
+    overflow-y: auto;
+    border: 1px solid #68686822;
+    box-sizing: border-box;
+}
+
+.list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clean-cache-local {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.goto-admin {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* screen max-width: 876px */
+@media screen and (max-width: 876px) {
+    .container {
+        margin: 15px;
+    }
+
+    .play-list-wraper {
+        gap: 15px;
+    }  
+
+    .contentMain {
+        margin: 15px 0;
+    }
+}
+
+/* screen max-width: 512px */
+@media screen and (max-width: 512px) {
+    .container {
+        margin: 15px;
+    }
+
+    .play-list-wraper {
+        flex-wrap: wrap;
+        height: 675px;
+        gap: 15px;
+    }
+
+    .preview {
+        width: 100%;
+        height: 350px;
+    }
+
+    .preview iframe {
+        width: 100%;
+    }
+
+    .list {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contentMain {
+        margin: 15px 0;
+    }
+}

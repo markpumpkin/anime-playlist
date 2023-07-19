@@ -1,0 +1,35 @@
+.admin-main {
+    position: relative;
+}
+
+.admin-main .btn-home  {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+}
+
+.admin-main .btn-home:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
+.admin-wraper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.admin-wraper .main-content {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    gap: 15px;
+}
+ 
+.admin-wraper .main-content .form-box {
+    width: 40%;
+}
+
+.admin-wraper .admin-list {
+    position: relative;
+    flex: 1;
+}

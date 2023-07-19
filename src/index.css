@@ -1,11 +1,11 @@
 body {
-    margin: 0;
-    font-family: 'Asap', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #343434;
+  margin: 0;
+  font-family: 'Asap', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #343434;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

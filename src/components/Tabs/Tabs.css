@@ -16,6 +16,7 @@
 
 .tab-container .tabHead {
     display: flex;
+    align-items: center;
     justify-items: center;
     margin-bottom: 5px;
     border-bottom: 1px solid #68686822;
@@ -23,8 +24,6 @@
     padding-left: 15px;
     position: relative;
 }
-
-
 
 .tab-container .tabHeadItem {
     cursor: pointer;
