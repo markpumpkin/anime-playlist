@@ -6,6 +6,7 @@ import {
     useState,
 } from "react";
 import axios from "axios";
+import { SERVER_HOST } from "../../../config";
 import Form from "../../../components/Form";
 import TableList from "../../../components/TableList";
 import { CategoryProps } from "../../../helpers/types";
@@ -28,7 +29,7 @@ function Category() {
         event.preventDefault();
         if (isEdit !== null) {
             await axios
-                .put(`http://localhost:8501/category/update`, {
+                .put(`${SERVER_HOST}:8501/category/update`, {
                     id: isEdit,
                     title,
                     thumbnail,
@@ -43,7 +44,7 @@ function Category() {
                 });
         } else {
             await axios
-                .post(`http://localhost:8501/category/create`, {
+                .post(`${SERVER_HOST}:8501/category/create`, {
                     title,
                     thumbnail,
                     description,
@@ -59,7 +60,7 @@ function Category() {
 
     const getCategoryList = useCallback(async (): Promise<void> => {
         await axios
-            .get(`http://localhost:8501/category/list`)
+            .get(`${SERVER_HOST}:8501/category/list`)
             .then((result: { status?: number; data: CategoryProps[] }) => {
                 if (result.status === 200) {
                     setCategories(result.data);
@@ -76,7 +77,7 @@ function Category() {
 
     const getCurrentCategory = async (id: number) => {
         await axios
-            .get(`http://localhost:8501/category/getById`, {
+            .get(`${SERVER_HOST}:8501/category/getById`, {
                 params: { id },
             })
             .then((result: { status?: number; data: CategoryProps }) => {

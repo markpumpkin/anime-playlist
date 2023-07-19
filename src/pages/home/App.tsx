@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import _ from "lodash";
 import axios from "axios";
 import "./App.css";
+import { SERVER_HOST } from "../../config";
 // import database, { ItemData, dataFullName } from "./data";
 // import * as images from "./images";
 import Dropdown from "../../components/Dropdown";
@@ -50,9 +51,7 @@ function App() {
     const getVideoList = useCallback(async (): Promise<void> => {
         if (tabActived !== "") {
             await axios
-                .get(
-                    `http://localhost:8501/video/list?categoryId=${tabActived}`
-                )
+                .get(`${SERVER_HOST}:8501/video/list?categoryId=${tabActived}`)
                 .then((result: { status?: number; data: VideoProps[] }) => {
                     if (result.status === 200) {
                         setVideos(result.data);
@@ -67,7 +66,7 @@ function App() {
 
     const getCategoryList = useCallback(async (): Promise<void> => {
         await axios
-            .get(`http://localhost:8501/category/list`)
+            .get(`${SERVER_HOST}:8501/category/list`)
             .then((result: { status?: number; data: CategoryProps[] }) => {
                 if (result.status === 200) {
                     setCategories(result.data);

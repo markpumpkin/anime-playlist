@@ -7,6 +7,7 @@ import {
 } from "react";
 import _ from "lodash";
 import axios from "axios";
+import { SERVER_HOST } from "../../../config";
 import TableList from "../../../components/TableList";
 import Form from "../../../components/Form";
 import Dropdown from "../../../components/Dropdown";
@@ -62,7 +63,7 @@ function Video() {
         event.preventDefault();
         if (isEdit !== null) {
             await axios
-                .put(`http://localhost:8501/video/update`, {
+                .put(`${SERVER_HOST}:8501/video/update`, {
                     id: isEdit,
                     source: "youtube",
                     label,
@@ -79,7 +80,7 @@ function Video() {
                 });
         } else {
             await axios
-                .post(`http://localhost:8501/video/create`, {
+                .post(`${SERVER_HOST}:8501/video/create`, {
                     source: "youtube",
                     label,
                     value,
@@ -97,9 +98,7 @@ function Video() {
 
     const getVideoList = useCallback(async (): Promise<void> => {
         await axios
-            .get(
-                `http://localhost:8501/video/list?categoryId=${currentCategory}`
-            )
+            .get(`${SERVER_HOST}:8501/video/list?categoryId=${currentCategory}`)
             .then((result: { status?: number; data: VideoProps[] }) => {
                 if (result.status === 200) {
                     setVideos(result.data);
@@ -112,7 +111,7 @@ function Video() {
 
     const getCategoryList = useCallback(async (): Promise<void> => {
         await axios
-            .get(`http://localhost:8501/category/list`)
+            .get(`${SERVER_HOST}:8501/category/list`)
             .then((result: { status?: number; data: CategoryProps[] }) => {
                 if (result.status === 200) {
                     setCategories(result.data);
@@ -134,7 +133,7 @@ function Video() {
 
     const getCurrentVideo = async (id: number): Promise<void> => {
         await axios
-            .get(`http://localhost:8501/video/getById`, {
+            .get(`${SERVER_HOST}:8501/video/getById`, {
                 params: { id },
             })
             .then((result: { status?: number; data: VideoProps }) => {
