@@ -36,4 +36,11 @@ export const data: ItemData[] = [
         thumbnail:
             "https://i.pinimg.com/originals/7f/96/90/7f96902e6dbd8bb3672f671c6ad8fe71.png",
     },
+    {
+        source: "youtube",
+        value: "j4huJBMUNBU",
+        label: "Thương Nguyên Đồ | Tập 6",
+        thumbnail:
+            "https://i.pinimg.com/originals/f5/a3/f1/f5a3f1c5a8aac3f7956c1a0a6ebfd2ca.png",
+    },
 ];
