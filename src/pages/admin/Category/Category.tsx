@@ -29,7 +29,7 @@ function Category() {
         event.preventDefault();
         if (isEdit !== null) {
             await axios
-                .put(`${SERVER_HOST}:8501/category/update`, {
+                .put(`${SERVER_HOST}:8502/category/update`, {
                     id: isEdit,
                     title,
                     thumbnail,
@@ -44,7 +44,7 @@ function Category() {
                 });
         } else {
             await axios
-                .post(`${SERVER_HOST}:8501/category/create`, {
+                .post(`${SERVER_HOST}:8502/category/create`, {
                     title,
                     thumbnail,
                     description,
@@ -60,7 +60,7 @@ function Category() {
 
     const getCategoryList = useCallback(async (): Promise<void> => {
         await axios
-            .get(`${SERVER_HOST}:8501/category/list`)
+            .get(`${SERVER_HOST}:8502/category/list`)
             .then((result: { status?: number; data: CategoryProps[] }) => {
                 if (result.status === 200) {
                     setCategories(result.data);
@@ -77,7 +77,7 @@ function Category() {
 
     const getCurrentCategory = async (id: number) => {
         await axios
-            .get(`${SERVER_HOST}:8501/category/getById`, {
+            .get(`${SERVER_HOST}:8502/category/getById`, {
                 params: { id },
             })
             .then((result: { status?: number; data: CategoryProps }) => {

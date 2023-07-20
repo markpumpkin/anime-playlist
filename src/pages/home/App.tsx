@@ -51,7 +51,7 @@ function App() {
     const getVideoList = useCallback(async (): Promise<void> => {
         if (tabActived !== "") {
             await axios
-                .get(`${SERVER_HOST}:8501/video/list?categoryId=${tabActived}`)
+                .get(`${SERVER_HOST}:8502/video/list?categoryId=${tabActived}`)
                 .then((result: { status?: number; data: VideoProps[] }) => {
                     if (result.status === 200) {
                         setVideos(result.data);
@@ -66,7 +66,7 @@ function App() {
 
     const getCategoryList = useCallback(async (): Promise<void> => {
         await axios
-            .get(`${SERVER_HOST}:8501/category/list`)
+            .get(`${SERVER_HOST}:8502/category/list`)
             .then((result: { status?: number; data: CategoryProps[] }) => {
                 if (result.status === 200) {
                     setCategories(result.data);
