@@ -4,10 +4,10 @@ function nav() {
             <nav>
                 <ul>
                     <li>
-                        <a href={`/home`}>Home</a>
+                        <a href="/home">Home</a>
                     </li>
                     <li>
-                        <a href={`/admin`}>Admin</a>
+                        <a href="/admin">Admin</a>
                     </li>
                 </ul>
             </nav>

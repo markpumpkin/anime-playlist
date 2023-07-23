@@ -1,0 +1,12 @@
+npm install pm2 -g
+pm2 serve <path> <port>
+ => pm2 serve myReactApp/ 3000 --name "my-react-app" --spa
+
+VD: pm2 serve ./build 3000 --name "dashboard" --spa
+
+
+// Ufw
+ sudo ufw allow 2222
+
+-- Enable
+    sudo ufw enable
