@@ -104,13 +104,15 @@
 /* screen max-width: 512px */
 @media screen and (max-width: 512px) {
     .container {
-        margin: 15px;
+        margin: 0;
+        padding: 15px;
+        height: 100vh;
     }
 
     .play-list-wraper {
         flex-wrap: wrap;
         height: calc(100vh - 130px);
-        max-height: 675px;
+        max-height: 600px;
         gap: 15px;
     }
 
