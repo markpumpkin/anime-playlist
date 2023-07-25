@@ -41,7 +41,7 @@
   color: #888;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 512px) {
   #root {
     padding: 0
   }
