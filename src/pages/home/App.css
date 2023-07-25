@@ -111,7 +111,7 @@
     }
 
     .play-list-wraper {
-        height: calc(100vh - 160px);
+        height: calc(100vh - 180px);
         max-height: 650px;
         gap: 15px;
         flex-direction: column;
