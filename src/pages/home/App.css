@@ -109,17 +109,19 @@
 
     .play-list-wraper {
         flex-wrap: wrap;
-        height: 675px;
+        height: 100vh;
+        max-height: 675px;
         gap: 15px;
     }
 
     .preview {
         width: 100%;
-        height: 350px;
+        height: 300px;
     }
 
     .preview iframe {
         width: 100%;
+        height: 100%;
     }
 
     .list {

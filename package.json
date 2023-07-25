@@ -9,7 +9,7 @@
 		"test": "npm run test:e2e",
 		"typecheck": "tsc --noEmit --skipLibCheck",
 		"prepare": "husky install",
-		"push": "git add . && git commit -m 'build' && git push"
+		"push": "yarn run build && git add . && git commit -m 'build' && git push"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.5.1",
