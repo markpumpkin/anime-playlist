@@ -109,7 +109,7 @@
 
     .play-list-wraper {
         flex-wrap: wrap;
-        height: 100vh;
+        height: calc(100vh - 130px);
         max-height: 675px;
         gap: 15px;
     }

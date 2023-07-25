@@ -1,11 +1,1 @@
-body {
-  margin: 0;
-  font-family: 'Asap', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #343434;
-}
-
-* {
-  box-sizing: border-box;
-}
+body{margin:0;font-family:"Asap",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#343434}*{box-sizing:border-box}h1,h2,h3,h4,h5,h6{margin:0;margin-bottom:15px}.current-title{margin-top:15px}

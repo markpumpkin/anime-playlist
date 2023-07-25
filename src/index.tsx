@@ -9,12 +9,9 @@
 // );
 
 import { createRoot } from 'react-dom/client';
-// import { Provider } from 'react-redux';
-// import { initStore } from 'stores/store';
 import RouterWraper from './routes';
-// import App from './App';
+import './index.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-// const store = initStore();
 root.render(<RouterWraper />);
