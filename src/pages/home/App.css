@@ -106,7 +106,7 @@
     .container {
         margin: 0;
         padding: 15px;
-        height: calc(100vh - 30px);
+        height: calc(100vh - 80px);
         flex-direction: column;
     }
 
@@ -117,8 +117,8 @@
     }
 
     .play-list-wraper {
-        height: calc(100vh - 220px);
-        max-height: 650px;
+        flex: 1;
+        max-height: 600px;
         gap: 15px;
         flex-direction: column;
     }
