@@ -54,7 +54,7 @@
     overflow-y: auto;
     border: 1px solid #68686822;
     box-sizing: border-box;
-}
+} 
 
 .list ul {
     list-style: none;
@@ -94,7 +94,7 @@
 
     .play-list-wraper {
         gap: 15px;
-    }  
+    }
 
     .contentMain {
         margin: 15px 0;
