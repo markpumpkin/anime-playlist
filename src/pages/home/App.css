@@ -110,6 +110,10 @@
         flex-direction: column;
     }
 
+    .current-title {
+        visibility: hidden;
+    }
+
     .play-list-wraper {
         height: calc(100vh - 220px);
         max-height: 650px;
