@@ -8,7 +8,8 @@
 		"re-build": "rm -rf node_modules package-lock.json dist && yarn && webpack --config webpack.prod.js --mode production",
 		"test": "npm run test:e2e",
 		"typecheck": "tsc --noEmit --skipLibCheck",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"push": "git add . && git commit -m 'build' && git push"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.5.1",
