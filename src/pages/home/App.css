@@ -106,7 +106,7 @@
     .container {
         margin: 0;
         padding: 15px;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 120px);
         flex-direction: column;
     }
 
