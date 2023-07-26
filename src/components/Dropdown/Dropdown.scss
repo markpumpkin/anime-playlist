@@ -1,0 +1,82 @@
+
+.dropdown-root {
+    position: relative;
+    width: 100%;
+
+    &:focus {
+        outline:none
+    }
+
+    .adminShow {
+        width: 100%;
+        height: 40px;
+        padding: 2px 10px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #dee4eb;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .adminTitle {
+        margin: 0;
+        padding: 2px;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        word-wrap: normal;
+    }
+
+    .dropdownContent {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 40px; 
+        max-height: 300px;
+        overflow: auto;
+        margin-top: 3px;
+        border: 1px solid #dee4eb;
+        background-color: #ffffff;
+        box-shadow: 0px 1px 4px 1px rgba(0,0,0, .12);
+        border-radius: 4px;
+        z-index: 3;
+    } 
+    
+    .option {
+        -st-states: actived;
+        cursor: pointer;
+        padding: 5px 25px;
+        text-align: left;
+
+        &:hover {
+            background-color: rgba(25, 149, 171, .1);
+        }
+
+        &.actived {
+            background-color: rgb(25, 149, 171);
+
+            p {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .optionTitle {
+        margin: 0;
+        padding: 5px 0;
+    }
+}
+
+
+@media (max-width: 512px) {
+    .dropdown-root { 
+        .adminShow > svg {
+            margin-left: -3px;
+        }
+
+        .option {
+            padding: 5px 10px;
+        }
+    }
+}
