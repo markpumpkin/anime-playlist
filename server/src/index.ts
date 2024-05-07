@@ -1,10 +1,10 @@
-import "dotenv/config";
+// import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import path from "path";
-import db from "./models";
-import { initTables } from "./models/tables";
+// import db from "./models";
+// import { initTables } from "./models/tables";
 import { initRouters } from "./routes";
 
 const app = express();
@@ -17,8 +17,8 @@ app.get("/api", (req, res) => {
 });
 
 /** init Table */
-initTables();
-db.sequelize;
+// initTables();
+// db.sequelize;
 
 /** init Router */
 initRouters(app);

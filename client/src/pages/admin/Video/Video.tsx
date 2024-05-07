@@ -1,24 +1,16 @@
-import {
-    ChangeEvent,
-    FormEvent,
-    useCallback,
-    useEffect,
-    useState,
-} from "react";
-import _ from "lodash";
-import axios from "axios";
-import { SERVER_HOST } from "../../../config";
-import TableList from "../../../components/TableList";
-import Form from "../../../components/Form";
-import Dropdown from "../../../components/Dropdown";
-import { CategoryProps, VideoProps } from "../../../helpers/types";
-import "./Video.css";
+import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react';
+import _ from 'lodash';
+import axios from 'axios';
+import { SERVER_HOST } from '../../../config';
+import TableList from '../../../components/TableList';
+import Form from '../../../components/Form';
+import Dropdown from '../../../components/Dropdown';
+import { CategoryProps, VideoProps } from '../../../helpers/types';
+import './Video.css';
 
 const mapCategoryOptions = (categories: CategoryProps[]) => {
     const abc: { value?: string | number; label?: string }[] = [];
-    _.map(categories, (category) =>
-        abc.push({ value: category.id, label: category.title })
-    );
+    _.map(categories, category => abc.push({ value: category.id, label: category.title }));
 
     return abc;
 };
@@ -32,12 +24,12 @@ const mapTableItems = (items: VideoProps[]) => {
     }[] = [];
     _.map(
         items,
-        (item) =>
+        item =>
             item?.id &&
             abc.push({
                 id: item.id,
                 title: item.label,
-                thumbnail: item.thumbnail,
+                thumbnail: item.thumbnail
             })
     );
 
@@ -47,66 +39,80 @@ const mapTableItems = (items: VideoProps[]) => {
 function Video() {
     const [isEdit, setIsEdit] = useState<number | null>(null);
     const [categories, setCategories] = useState<CategoryProps[]>([]);
-    const [currentCategory, setCurrentCategory] = useState<number | string>("");
-    const [label, setLabel] = useState("");
-    const [value, setDescription] = useState("");
-    const [thumbnail, setThumbnail] = useState("");
+    const [currentCategory, setCurrentCategory] = useState<number | string>('');
+    const [label, setLabel] = useState('');
+    const [value, setDescription] = useState('');
+    const [thumbnail, setThumbnail] = useState('');
     const [videos, setVideos] = useState<VideoProps[]>([]);
 
     const resetForm = () => {
-        setThumbnail("");
-        setDescription("");
-        setLabel("");
+        setThumbnail('');
+        setDescription('');
+        setLabel('');
     };
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
-        if (isEdit !== null) {
-            await axios
-                .put(`${SERVER_HOST}:8502/video/update`, {
-                    id: isEdit,
-                    source: "youtube",
-                    label,
-                    value,
-                    thumbnail,
-                    category: currentCategory,
-                })
-                .then((result: { status?: number; data: VideoProps[] }) => {
-                    if (result.status === 201) {
-                        setIsEdit(null);
-                        setVideos(result.data);
-                        resetForm();
-                    }
-                });
-        } else {
-            await axios
-                .post(`${SERVER_HOST}:8502/video/create`, {
-                    source: "youtube",
-                    label,
-                    value,
-                    thumbnail,
-                    category: currentCategory,
-                })
-                .then((result) => {
-                    if (result.status === 201) {
-                        setVideos([...videos, result.data]);
-                        resetForm();
-                    }
-                });
-        }
+        // if (isEdit !== null) {
+        //     await axios
+        //         .put(`${SERVER_HOST}:8502/video/update`, {
+        //             id: isEdit,
+        //             source: 'youtube',
+        //             label,
+        //             value,
+        //             thumbnail,
+        //             category: currentCategory
+        //         })
+        //         .then((result: { status?: number; data: VideoProps[] }) => {
+        //             if (result.status === 201) {
+        //                 setIsEdit(null);
+        //                 setVideos(result.data);
+        //                 resetForm();
+        //             }
+        //         });
+        // } else {
+        //     await axios
+        //         .post(`http://localhost:3333/video/create`, {
+        //             source: 'youtube',
+        //             label,
+        //             value,
+        //             thumbnail,
+        //             category: currentCategory
+        //         })
+        //         .then(result => {
+        //             if (result.status === 201) {
+        //                 setVideos([...videos, result.data]);
+        //                 resetForm();
+        //             }
+        //         });
+        // }
+        await axios
+            .post(`http://localhost:3333/video/create`, {
+                source: 'youtube',
+                label,
+                value,
+                thumbnail,
+                category: currentCategory
+            })
+            .then(result => {
+                // if (result.status === 201) {
+                //     setVideos([...videos, result.data]);
+                //     resetForm();
+                // }
+            });
     };
 
     const getVideoList = useCallback(async (): Promise<void> => {
-        await axios
-            .get(`${SERVER_HOST}:8502/video/list?categoryId=${currentCategory}`)
-            .then((result: { status?: number; data: VideoProps[] }) => {
-                if (result.status === 200) {
-                    setVideos(result.data);
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        // await axios
+        //     .get(`${SERVER_HOST}:8502/video/list?categoryId=${currentCategory}`)
+        //     .then((result: { status?: number; data: VideoProps[] }) => {
+        //         if (result.status === 200) {
+        //             setVideos(result.data);
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
     }, [currentCategory]);
 
     const getCategoryList = useCallback(async (): Promise<void> => {
@@ -117,7 +123,7 @@ function Video() {
                     setCategories(result.data);
                 }
             })
-            .catch((error) => {
+            .catch(error => {
                 console.log(error);
             });
     }, []);
@@ -128,22 +134,17 @@ function Video() {
     }, [getCategoryList, getVideoList]);
 
     const deleteCurrentVideo = (id: number) => {
-        console.log("video id", id);
+        console.log('video id', id);
     };
 
     const getCurrentVideo = async (id: number): Promise<void> => {
         await axios
             .get(`${SERVER_HOST}:8502/video/getById`, {
-                params: { id },
+                params: { id }
             })
             .then((result: { status?: number; data: VideoProps }) => {
                 if (result.status === 200) {
-                    const {
-                        value = "",
-                        label = "",
-                        thumbnail = "",
-                        category = "",
-                    } = result.data;
+                    const { value = '', label = '', thumbnail = '', category = '' } = result.data;
 
                     setIsEdit(id);
                     setLabel(label);
@@ -153,8 +154,8 @@ function Video() {
                     setCurrentCategory(category);
                 }
             })
-            .catch((error) => {
-                console.log("error", error);
+            .catch(error => {
+                console.log('error', error);
             });
     };
 
@@ -199,9 +200,7 @@ function Video() {
                                 placeholder="Enter category label"
                                 type="text"
                                 value={label}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                    setLabel(e.target.value)
-                                }
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setLabel(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
@@ -211,9 +210,7 @@ function Video() {
                                 placeholder="Enter thumbnail url"
                                 type="text"
                                 value={thumbnail}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                    setThumbnail(e.target.value)
-                                }
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setThumbnail(e.target.value)}
                             />
                         </div>
                     </Form>

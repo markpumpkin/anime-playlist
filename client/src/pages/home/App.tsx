@@ -3,30 +3,31 @@ import _ from 'lodash';
 import axios from 'axios';
 import './App.css';
 import { SERVER_HOST } from '../../config';
-// import database, { ItemData, dataFullName } from "./data";
+import database, { ItemData, dataFullName } from './data';
 // import * as images from "./images";
 import Dropdown from '../../components/Dropdown';
 import { mapCategoryOptions } from '../../helpers/helpers';
 import { CategoryProps, VideoProps } from '../../helpers/types';
 import Item from './components/Item/Item';
+import { getCategoriesOptions } from './helper';
 
-// export type TabActivedName = keyof typeof dataFullName;
+export type TabActivedName = keyof typeof dataFullName;
 
-// const LOCALSTORAGE_NAME = "anime-playlist";
-// const categories = _.keysIn(database) as TabActivedName[];
+const LOCALSTORAGE_NAME = 'anime-playlist';
+const categories = _.keysIn(database) as TabActivedName[];
 
-// /** Get data list option */
-// const dataList = () => {
-//     const options: { value: TabActivedName; label: string }[] = [];
-//     _.each(categories, (item) => {
-//         options.push({
-//             value: item,
-//             label: dataFullName[item],
-//         });
-//     });
+/** Get data list option */
+const dataList = () => {
+    const options: { value: TabActivedName; label: string }[] = [];
+    _.each(categories, item => {
+        options.push({
+            value: item,
+            label: dataFullName[item]
+        });
+    });
 
-//     return options;
-// };
+    return options;
+};
 
 const getDefaultThumbnail = (categories: CategoryProps[], categoryID: number | string) => {
     const currentCategory = _.find(
@@ -39,43 +40,56 @@ const getDefaultThumbnail = (categories: CategoryProps[], categoryID: number | s
 
 function App() {
     const [categories, setCategories] = useState<CategoryProps[]>([]);
-    const [videos, setVideos] = useState<VideoProps[]>([]);
-    const [currentItem, setCurrentItem] = useState<VideoProps | undefined>(undefined);
+    const [videos, setVideos] = useState<ItemData[]>([]);
+    const [currentItem, setCurrentItem] = useState<ItemData | undefined>(undefined);
     const [tabActived, setTabActived] = useState<number | string>('');
 
     const getVideoList = useCallback(async (): Promise<void> => {
         if (tabActived !== '') {
-            await axios
-                .get(`${SERVER_HOST}:8502/video/list?categoryId=${tabActived}`)
-                .then((result: { status?: number; data: VideoProps[] }) => {
-                    if (result.status === 200) {
-                        setVideos(result.data);
-                        setCurrentItem(result.data[0]);
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                });
+            const currentCategory = categories[tabActived];
+            // console.log('aasds', tabActived, currentCategory.slug);
+
+            const videoList: ItemData[] = _.get(database, currentCategory.slug, []);
+            setVideos(videoList);
+            setCurrentItem(videoList[0]);
+            // await axios
+            //     .get(`${SERVER_HOST}:8502/video/list?categoryId=${tabActived}`)
+            //     .then((result: { status?: number; data: VideoProps[] }) => {
+            //         if (result.status === 200) {
+            //             setVideos(result.data);
+            //             setCurrentItem(result.data[0]);
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.log(error);
+            //     });
         }
     }, [tabActived]);
 
-    const getCategoryList = useCallback(async (): Promise<void> => {
-        await axios
-            .get(`${SERVER_HOST}:8502/category/list`)
-            .then((result: { status?: number; data: CategoryProps[] }) => {
-                if (result.status === 200) {
-                    setCategories(result.data);
-                    setTabActived(result.data[0].id);
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }, []);
+    // const getCategoryList = useCallback(async (): Promise<void> => {
+    //     await axios
+    //         .get(`${SERVER_HOST}:8502/category/list`)
+    //         .then((result: { status?: number; data: CategoryProps[] }) => {
+    //             if (result.status === 200) {
+    //                 setCategories(result.data);
+    //                 setTabActived(result.data[0].id);
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // }, []);
 
+    // useEffect(() => {
+    //     void getCategoryList();
+    // }, [getCategoryList]);
     useEffect(() => {
-        void getCategoryList();
-    }, [getCategoryList]);
+        const cOptions = getCategoriesOptions(_.keysIn(database));
+        if (cOptions.length) {
+            setCategories(getCategoriesOptions(_.keysIn(database)));
+            setTabActived(0);
+        }
+    }, []);
 
     // /** Set Local Storage */
     // const setStorageValue = (key: string, value: Object) => {
