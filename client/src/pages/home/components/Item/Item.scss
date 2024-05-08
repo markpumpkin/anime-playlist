@@ -2,12 +2,12 @@
     cursor: pointer;
     padding-left: 10px;
     display: flex; 
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
-    gap: 8px;
+    align-items: center; 
+    gap: 8px; 
     
     &:hover {
         background-color: rgba(0, 0, 0, 0.03);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
     }
 
     &._isSelected {
@@ -15,10 +15,11 @@
     }
 
     .link-youtube {    
-        width: 70px;
-        height: 50px;
-        padding: 2px;
-        border-radius: 2px;
+        width: 100px;
+        height: 56px; 
+        border-radius: 6px;
+        margin: 6px 0;
+        overflow: hidden;
         background-color: transparent;
         transition: background ease .2s;
         display: flex;
