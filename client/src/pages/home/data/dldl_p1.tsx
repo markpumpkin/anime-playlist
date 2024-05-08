@@ -1,76 +1,76 @@
 import { type ItemData } from '.';
 
+// thumbnail 890 x 500
 export const data: ItemData[] = [
     {
         source: 'youtube',
         category: '1',
         value: 'kEXUCBqUX2Y',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 1',
-        thumbnail:
-            'https://i9.ytimg.com/vi/DnXLhQZ--ws/mqdefault.jpg?sqp=CNyr6bEG-oaymwEmCMACELQB8quKqQMa8AEB-AHOBoAC4AOKAgwIABABGEogNSh_MA8=&rs=AOn4CLB1AmOYLLNDaVoXvppNEQ8iZ-yUpA'
+        thumbnail: 'https://i.pinimg.com/originals/3a/14/59/3a14592e681541c496243549cf53801b.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'fj9Szzg6Wwk',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 2',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/84/df/de/84dfde5a51ce72883290759fc3100e5a.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'M6__mxcV92Y',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 3',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/b5/d5/ee/b5d5ee56dc09fcc1385808b370050d46.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'fAbNKsgEtC8',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 4',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/d3/0f/02/d30f02284adea5ee9a6e611406c16a13.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'jpp2wjOHzks',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 5',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/5d/8d/cc/5d8dcca91ef8ab43c3b7032dd9ef251f.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '6qBNAdAaTYw',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 6',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/a4/4e/8c/a44e8c4223fdbc6863e2e91ce4f87d5c.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'Ffn88yVj3OU',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 7',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/60/f7/05/60f705b396198e29f5e886d65fd9bde6.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '7RHVZu6LHbs',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 8',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/02/47/aa/0247aa31cdd990c566926c60da13e8f1.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'VG4XaccrIM4',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 9',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/b6/7a/8e/b67a8e49b6df1800e0f6dae7dfbf2656.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'rw-92k1xJX8',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 10',
-        thumbnail: ''
+        thumbnail: 'https://i.pinimg.com/originals/8c/67/f1/8c67f1f31e10306abb160862925a359c.jpg'
     },
     {
         source: 'youtube',
