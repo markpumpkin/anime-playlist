@@ -357,140 +357,140 @@ export const data: ItemData[] = [
         category: '1',
         value: 'RcufMD_Smz8',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 51',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/ec/12/c0/ec12c0cd0665de244702882e4ad6ab00.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '1Nj_zG7cDu0',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 52',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/d8/d0/74/d8d074c663f8fc0ce382cca2ac5a422c.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'Lfj5jDIJjXM',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 53',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/c6/6f/75/c66f751b2f654f8d5caba6fa36db04c0.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'VyEM35rn-XA',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 54',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/44/12/7e/44127e7b352e12a1bb0653f4656703fb.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'M6bXUXQIuIQ',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 55',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/99/47/75/9947751c171c6cc3f8684cf04d9cb650.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '75IrNmdRgz4',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 56',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/bf/25/7d/bf257d7dfe0e3d3bea04a0ce41650c89.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'R4iZaTBCWpM',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 57',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/59/2a/72/592a721b697d960d92a58b789c9172cd.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'fsCVO_6hfSg',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 58',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/f2/ee/0e/f2ee0e0aadacbdbd8d3dbd3e40817e31.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'Odm5of8fDNw',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 59',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/d1/57/fb/d157fb8dfbcee309ce185071ae342cc1.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'MBYgj3EPTes',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 60',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/34/08/8e/34088ee65542c510fd64d9986bfc0a6b.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '96Nry4qq29Y',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 61',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/af/ee/37/afee37d5f2157ae9f11e6f8d382badd8.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '37HT23c3IEA',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 62',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/47/f7/43/47f743a9f3831031c40dd016d44856ce.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '-AN9xPQhJVM',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 63',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/a6/04/d7/a604d79b419e62f2736d5bcededd379e.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'fv-xqF1mJSs',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 64',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/ac/96/11/ac961129ad0141062cde9e13e5e705e6.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'Ly3WrtVUtHA',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 65',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/10/94/79/1094796d5dd8fc9398b2f896df94959e.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'mecs-Wtxb2c',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 66',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/2a/48/74/2a4874bae38e78413d5161ea56e3d2e7.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '6n31bIIUOdQ',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 67',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/66/d5/77/66d57751fcd34631876f99c8e75afec5.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'IAExmKNOwjo',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 68',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/52/32/0d/52320d0ba6d157998042ebde6238062b.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: 'hsGlO2rByqw',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 69',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/80/a8/07/80a807d732df8f5acd27aa53502742b5.jpg'
     },
     {
         source: 'youtube',
         category: '1',
         value: '0-UVNz07wRc',
         label: 'Đấu La Đại Lục - Phần 1 | Tập 70',
-        thumbnail: 'aaaaaa'
+        thumbnail: 'https://i.pinimg.com/originals/ca/b5/22/cab5221ff56b2f888ab2890780540c8a.jpg'
     },
     {
         source: 'youtube',
